@@ -47,6 +47,13 @@ export default defineConfig({
           ]
         },
         {
+          text: 'VitePress 建站',
+          collapsed: false,
+          items: [
+            { text: '原理与目录/链接', link: '/notes/vitepress/how-it-works' }
+          ]
+        },
+        {
           text: 'Python',
           collapsed: false, // false = 默认展开，true = 默认折叠
           items: [
@@ -58,6 +65,14 @@ export default defineConfig({
           collapsed: false,
           items: [
             { text: 'TCP 三次握手', link: '/notes/network/tcp' }
+          ]
+        }
+        ,// 加一个逗号，方便后续添加新笔记
+        {
+          text: 'Linux',
+          collapsed: false,
+          items: [
+            { text: 'Linux 基础', link: '/notes/linux/linux' }
           ]
         }
       ]
