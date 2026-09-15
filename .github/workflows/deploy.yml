@@ -1,0 +1,71 @@
+# 自动构建并部署 VitePress 站点到 GitHub Pages
+# 来源：VitePress 官方部署文档 https://vitepress.dev/guide/deploy
+#
+# 触发方式：推送到 main 分支时自动运行；也可以在 Actions 页面手动触发。
+name: Deploy VitePress site to Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# 允许这个工作流向 GitHub Pages 写入
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 同一时间只跑一个部署，但不打断正在进行的部署
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          # lastUpdated 需要完整的 git 历史，所以要 fetch-depth: 0
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Cache VitePress
+        uses: actions/cache@v4
+        with:
+          path: docs/.vitepress/cache
+          key: ${{ runner.os }}-vitepress-${{ hashFiles('docs/**', 'package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-vitepress-
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Install dependencies
+        # 用 npm ci 需要 package-lock.json 已提交
+        run: npm ci
+
+      - name: Build with VitePress
+        run: npm run docs:build
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/.vitepress/dist
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

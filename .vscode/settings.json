@@ -1,0 +1,35 @@
+{
+  // 自动保存：改完 1 秒后自动存，配合 VitePress 热更新，浏览器立即变化
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1000,
+
+  // Markdown 自动换行，长段落不用横向滚动
+  "[markdown]": {
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
+    }
+  },
+
+  // Paste Image 插件：截图后 Ctrl+Alt+V，图片自动存到 docs/public/images/
+  // 并插入 /images/xxx.png 形式的链接
+  "pasteImage.path": "${projectRoot}/docs/public/images",
+  "pasteImage.basePath": "${projectRoot}/docs/public",
+  "pasteImage.prefix": "/",
+  "pasteImage.namePrefix": "img-",
+  "pasteImage.insertPattern": "![${imageName}](${imagePath})",
+
+  // 把 node_modules 之类的噪音从搜索和文件树里藏起来
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/docs/.vitepress/cache": true,
+    "**/docs/.vitepress/dist": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/docs/.vitepress/cache": true,
+    "**/docs/.vitepress/dist": true
+  }
+}
