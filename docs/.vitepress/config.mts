@@ -48,21 +48,22 @@ export default defineConfig({
         },
         {
           text: 'VitePress 建站',
-          collapsed: false,
+          collapsed: true,
           items: [
-            { text: '原理与目录/链接', link: '/notes/vitepress/how-it-works' }
+            { text: '原理与目录/链接', link: '/notes/vitepress/how-it-works' },
+            { text: '如何添加笔记', link: '/notes/vitepress/how-to-add-notes' }
           ]
         },
         {
           text: 'Python',
-          collapsed: false, // false = 默认展开，true = 默认折叠
+          collapsed: true, // false = 默认展开，true = 默认折叠
           items: [
             { text: '基础语法', link: '/notes/python/basics' }
           ]
         },
         {
           text: '计算机网络',
-          collapsed: false,
+          collapsed: true,
           items: [
             { text: 'TCP 三次握手', link: '/notes/network/tcp' }
           ]
@@ -70,11 +71,39 @@ export default defineConfig({
         ,// 加一个逗号，方便后续添加新笔记
         {
           text: 'Linux',
-          collapsed: false,
+          collapsed: true,
           items: [
+            { text: 'Linux入门',
+              collapsed: true,
+              items: [ 
+                { text: 'Linux命令', link: '/notes/linux/linuxStarter/linux-commands' }
+              ]
+             },
             { text: 'Linux 基础', link: '/notes/linux/linux' }
+            
           ]
         }
+        ,
+        {
+          text: '计算机组成原理',
+          collapsed: true,
+          items: [
+            {text:'指令体系结构',
+              collapsed: true,
+              items:[
+                { text: 'ISA',link:'/notes/coa/instruction-system/instruction-system' }
+              ]
+            },
+            {
+              text:'CPU',
+              collapsed:true,
+              items:[
+                { text: 'CPU',link:'/notes/coa/cpu/cpu' }
+              ]
+            }
+          ]
+        }
+
       ]
     },
 

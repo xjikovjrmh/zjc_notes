@@ -20,6 +20,7 @@
 | Python | [基础语法](./python/basics.md) | 语法演示样例 |
 | 计算机网络 | [TCP 三次握手](./network/tcp.md) | 语法演示样例 |
 | Linux | [Linux 基础](./linux/linux.md) | 语法基础 |
+| 计算机组成原理 |[计算机组成原理](./coa/cpu.md) | 概念理解 |
 
 ::: tip 两种链接写法别搞混
 - **正文里**写链接：用文件路径，**带 `.md`**，如 `[基础语法](./python/basics.md)`
