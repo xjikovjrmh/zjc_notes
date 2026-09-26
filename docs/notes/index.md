@@ -20,7 +20,7 @@ npm run docs:build 测试
 | 开始 | [写作速查表](./cheatsheet.md) | Markdown 和 VitePress 语法，**建议常回来查** |
 | VitePress 建站 | [原理与目录/链接](./vitepress/how-it-works.md) | 为什么能搜索、目录怎么排、链接怎么写 |
 | Python | [基础语法](./python/basics.md) | 语法演示样例 |
-| 计算机网络 | [TCP 三次握手](./network/tcp.md) | 语法演示样例 |
+| 计算机网络 | [TCP 三次握手](./network/physics_layer/数据通信.md) | 语法演示样例 |
 | Linux | [Linux 基础](./linux/linux.md) | 语法基础 |
 | 计算机组成原理 |[计算机组成原理](./coa//cpu/cpu.md) | 概念理解  |
 

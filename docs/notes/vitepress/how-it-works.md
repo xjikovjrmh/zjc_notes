@@ -69,7 +69,7 @@ npm run docs:build
           ▼
    你第一次点开搜索框 → 浏览器才去下载这个 chunk
           │
-          ▼
+          ▼ 
    输入关键词 → 在内存里用 MiniSearch 做倒排检索 → 直接出结果
 ```
 

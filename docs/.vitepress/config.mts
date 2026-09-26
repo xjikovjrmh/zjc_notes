@@ -65,7 +65,13 @@ export default defineConfig({
           text: '计算机网络',
           collapsed: true,
           items: [
-            { text: 'TCP 三次握手', link: '/notes/network/tcp' }
+            {text: '物理层',
+            collapsed: true,
+            items:[
+              {text: '数据通信',link:'/notes/network/physics_layer/数据通信'}
+            ]}
+            
+           
           ]
         }
         ,// 加一个逗号，方便后续添加新笔记
@@ -117,7 +123,6 @@ export default defineConfig({
     darkModeSwitchLabel: '主题',
     returnToTopLabel: '回到顶部',
     sidebarMenuLabel: '目录',
-    outlineTitle: '本页目录',
 
     // 右上角 GitHub 图标：记得换成你自己的主页
     socialLinks: [
